@@ -33,7 +33,7 @@ if (!searchValue.length >= 1) {
 const complete = (text) =>{
     const newTodos = [...todos];
 
-    const todoIndex = newTodos.findIndex(todo => todo.text == text);
+    const todoIndex = newTodos.findIndex(todo => todo.text === text);
 
     if (newTodos[todoIndex].completed) {
       newTodos[todoIndex].completed = false
@@ -55,9 +55,9 @@ const addTodo = (todo) =>{
     };
   } 
 
-  const filter = newTodos.filter(t => t.text == todo.text);
+  const filter = newTodos.filter(t => t.text === todo.text);
 
-  if (filter.length == 0) {
+  if (filter.length === 0) {
     newTodos.push(todo);
 
     saveTodos(newTodos);
@@ -80,7 +80,7 @@ const deleteTodo = (text) => {
 
   const newTodos = [...todos];
 
-  const todoIndex = newTodos.findIndex(todo => todo.text == text);
+  const todoIndex = newTodos.findIndex(todo => todo.text === text);
 
   newTodos.splice(todoIndex,1);
 

@@ -22,8 +22,8 @@ export default function MainUI() {
     <TodoList>
     {error && <TodosError/>}
     {loading && new Array(6).fill().map((item, index)=>(<TodosLoading key={index} />))}
-    {totalTodos == 0 ? <EmptyTodos/> : null}
-    {searchedTodos.length == 0 & totalTodos != 0 ? <Empty/> : null}
+    {totalTodos === 0 ? <EmptyTodos/> : null}
+    {searchedTodos.length === 0 & totalTodos !== 0 ? <Empty/> : null}
 
     {searchedTodos.map(todo => (
           <TodoItem
